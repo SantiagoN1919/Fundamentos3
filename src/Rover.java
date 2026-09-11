@@ -3,8 +3,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.Queue;
+
 
 public class Rover {
     public static void main(String[] args) {
@@ -12,6 +15,17 @@ public class Rover {
         ArrayList<String> lineas = leerArchivo(cadena);
         Queue<String> queue = addToQueue(lineas);
         travelQueue(queue);
+        Deque<String> stack = queueToStack(queue);
+    }
+    public static Deque<String> queueToStack(Queue<String> queue) {
+        Deque<String> deque = new ArrayDeque<>();
+        while (!queue.isEmpty()) {
+            String linea = queue.poll();
+            if (linea != null) {
+                deque.push(linea);
+            }
+        }
+        return deque;
     }
     public static void travelQueue (Queue<String>queue) {
         while(!queue.isEmpty()) {
