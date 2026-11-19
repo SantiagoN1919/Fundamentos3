@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 class Personas {
@@ -32,9 +33,10 @@ class Personas {
     }
 }
 
-public class ExpedientesPersonas {
+public class expedientePersonas {
     public static void main(String[] args) {
-        String nombreArchivo = "fd_3/fundamentos_3_2026/Expedientespersonas/listado_personas_expediente.csv"; // Cambia esto al nombre de tu archivo
+        System.out.println(new java.io.File(".").getAbsolutePath());
+        String nombreArchivo = "C:/Users/santi/OneDrive/Escritorio/Universidad/Materias/Fundamentos de la Computacion 3/Fundamentos3/expedientesPersonas/listado_personas_expediente.csv"; 
         ArrayList<Personas> personas = cargaArchivoPersonas(nombreArchivo);
         if (personas.size() > 10) {
             Personas personaEncontrada = personas.get(10);
@@ -51,7 +53,11 @@ public class ExpedientesPersonas {
             mapaPersonas.put(persona.getNombre(), persona);
         }
         Personas personaEncontradaEnHashMap = buscarPersonaenHashMap(mapaPersonas, "Luis Caro Durazo");
+        if (personaEncontradaEnHashMap != null) {
         personaEncontradaEnHashMap.mostrarDatos();
+            } else {
+                System.out.println("No se encontro a Luis Caro Durazo");
+            }
         buscarVariasPersonasEnHashMap(mapaPersonas, nombresABuscar);
     }
     public static Personas buscarPersonaenHashMap(java.util.HashMap<String, Personas> mapaPersonas, String nombre) {
@@ -97,7 +103,7 @@ public class ExpedientesPersonas {
     }
     public static ArrayList<Personas> cargaArchivoPersonas(String nombreArchivo) {
         ArrayList<Personas> personas = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo, StandardCharsets.UTF_8))) {
             String linea;
             boolean primeraLinea = true;
             while ((linea = br.readLine()) != null) {
