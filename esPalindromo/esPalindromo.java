@@ -1,11 +1,12 @@
-package fd_3.fundamentos_3_2026.EsPalindromo.src;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-public class EsPalindromo {
+class esPalindromo {
     public static void main(String[] args) {
         String cadena = args.length > 0 ? args[0] : "ama";
         boolean esPalindromo = esPalindromo(cadena);
         System.out.println("Cadena: " + cadena);
-        System.out.println("¿Es palíndromo? " + esPalindromo);
+        System.out.println("Es palindromo? " + esPalindromo);
     }
 
     public static boolean esPalindromo(String cadena) {
