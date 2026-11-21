@@ -1,5 +1,3 @@
-package fd_3.fundamentos_3_2026.NombresArrayList;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +20,7 @@ class nameCount {
 }
 public class NombresArrayList {
     public static void main(String[] args) {
-        Path filePath = Paths.get("/Users/federicocirettgalan/Documents/proyectos_vscode/fundamentos_computacion3/fd_3/fundamentos_3_2026/NombresArrayList/listado.txt");
+        Path filePath = Paths.get("C:/Users/santi/OneDrive/Escritorio/Universidad/Materias/Fundamentos de la Computacion 3/Fundamentos3/NombresArraylist/listado.txt");
         ArrayList<String> namesList = readNamesFromFile(filePath.toString());
         int FIRSTNAME = 0,FIRST_LASTNAME = 1, LAST_LASTNAME=2; 
         printNames(namesList);
