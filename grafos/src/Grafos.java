@@ -1,6 +1,5 @@
 public class Grafos {
-    static final String CARPETA = "C:/Users/santi/OneDrive/Escritorio/Universidad/Materias/Fundamentos de la Computacion 3/grafos/";
-//C:\Users\santi\OneDrive\Escritorio\Universidad\Materias\Fundamentos de la Computacion 3\grafos\grafo_salon.txt
+    static final String CARPETA = "C:/Users/santi/OneDrive/Escritorio/Universidad/Materias/Fundamentos de la Computacion 3/Fundamentos3/grafos/";
     public static void main(String[] args) {
         System.setOut(new java.io.PrintStream(System.out, true, java.nio.charset.StandardCharsets.UTF_8));
         System.out.println("Carpeta de trabajo: " + new java.io.File(".").getAbsolutePath());

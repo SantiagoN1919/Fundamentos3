@@ -36,7 +36,7 @@ class Personas {
 public class expedientePersonas {
     public static void main(String[] args) {
         System.out.println(new java.io.File(".").getAbsolutePath());
-        String nombreArchivo = "C:/Users/santi/OneDrive/Escritorio/Universidad/Materias/Fundamentos de la Computacion 3/Fundamentos3/expedientesPersonas/listado_personas_expediente.csv"; 
+        String nombreArchivo = "expedientesPersonas/listado_personas_expediente.csv"; 
         ArrayList<Personas> personas = cargaArchivoPersonas(nombreArchivo);
         if (personas.size() > 10) {
             Personas personaEncontrada = personas.get(10);
